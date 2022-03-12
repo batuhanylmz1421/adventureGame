@@ -1,2 +1,5 @@
 # adventureGame
-Week-2-adventure-game
+Patika Java Bootcamp <br/>
+Week-2 <br/>
+Homework <br/>
+Batuhan YILMAZ
