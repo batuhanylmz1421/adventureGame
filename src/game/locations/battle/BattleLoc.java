@@ -156,7 +156,7 @@ public abstract class BattleLoc extends Location {
                 System.out.println("Now, your balance: " + this.getPlayer().getMoney() + ".");
             } else {
                 System.out.println("You earned " + droppedMoneyAmount +
-                        " money, but you had to give it to the miner to get out of the mine :(" +
+                        " Money, but you lost it :(" +
                         "\n<No Money Earned!>"
                 );
             }
