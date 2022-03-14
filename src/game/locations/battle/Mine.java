@@ -8,6 +8,6 @@ import game.player.Player;
 public class Mine extends BattleLoc {
 
     public Mine(Player player) {
-        super(player, "Mine", new Snake(), "gold", 6);
+        super(player, "Mine", new Snake(), "item", 5);
     }
 }

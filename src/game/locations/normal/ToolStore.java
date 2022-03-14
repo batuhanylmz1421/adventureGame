@@ -87,22 +87,27 @@ public class ToolStore extends NormalLoc {
             if (selectedWeapon != null) {
                 // Balance checker
                 if (selectedWeapon.getPrice() > this.getPlayer().getMoney()) {
-                    System.out.println("Not enough money!");
+                    System.out.println("Not enough money!\n");
                 } else {
-                    // Weapon buying section
-                    System.out.println("You bought " + selectedWeapon.getName() + ".");
+                    // If player has already bought the same or greater weapon, than print notificaiton.
+                    if(this.getPlayer().getWeapon().getId() >= selectedWeapon.getId()) {
+                        System.out.println("You have already greater or equal Weapon. Buying skipped!\n");
+                    }
+                    else {
+                        // Weapon buying section
+                        System.out.println("-> You bought " + selectedWeapon.getName() + ".");
 
-                    // Calculating balance
-                    int balance = this.getPlayer().getMoney() - selectedWeapon.getPrice();
-                    this.getPlayer().setMoney(balance);
-                    System.out.println("Remaining Money: " + this.getPlayer().getMoney());
+                        // Calculating balance
+                        int balance = this.getPlayer().getMoney() - selectedWeapon.getPrice();
+                        this.getPlayer().setMoney(balance);
+                        System.out.println("Remaining Money: " + this.getPlayer().getMoney());
 
-                    // Setting weapon to the player
-                    System.out.println("Previous Weapon: " + this.getPlayer().getInventory().getWeapon().getName());
-                    this.getPlayer().getInventory().setWeapon(selectedWeapon);
-                    System.out.println("New Weapon: " + this.getPlayer().getInventory().getWeapon().getName());
-                    System.out.println();
-
+                        // Setting weapon to the player
+                        System.out.println("Previous Weapon: " + this.getPlayer().getInventory().getWeapon().getName());
+                        this.getPlayer().getInventory().setWeapon(selectedWeapon);
+                        System.out.println("New Weapon: " + this.getPlayer().getInventory().getWeapon().getName());
+                        System.out.println();
+                    }
                 }
             }
         }
@@ -143,19 +148,25 @@ public class ToolStore extends NormalLoc {
                 if (selectedArmor.getPrice() > this.getPlayer().getMoney()) {
                     System.out.println("Not enough money!");
                 } else {
-                    // Armor buying section
-                    System.out.println("You bought " + selectedArmor.getName() + ".");
+                    // If player has already bought the same or greater armor, than print notificaiton
+                    if(this.getPlayer().getArmor().getId() >= selectedArmor.getId()) {
+                        System.out.println("You have already greater or equal Armor. Buying skipped!");
+                    }
+                    else {
+                        // Armor buying section
+                        System.out.println("You bought " + selectedArmor.getName() + ".");
 
-                    // Calculating balance
-                    int balance = this.getPlayer().getMoney() - selectedArmor.getPrice();
-                    this.getPlayer().setMoney(balance);
-                    System.out.println("Remaining Money: " + this.getPlayer().getMoney());
+                        // Calculating balance
+                        int balance = this.getPlayer().getMoney() - selectedArmor.getPrice();
+                        this.getPlayer().setMoney(balance);
+                        System.out.println("Remaining Money: " + this.getPlayer().getMoney());
 
-                    // Setting armor to the player
-                    System.out.println("Previous Weapon: " + this.getPlayer().getInventory().getArmor().getName());
-                    this.getPlayer().getInventory().setArmor(selectedArmor);
-                    System.out.println("New Armor: " + this.getPlayer().getInventory().getArmor().getName());
-                    System.out.println();
+                        // Setting armor to the player
+                        System.out.println("Previous Weapon: " + this.getPlayer().getInventory().getArmor().getName());
+                        this.getPlayer().getInventory().setArmor(selectedArmor);
+                        System.out.println("New Armor: " + this.getPlayer().getInventory().getArmor().getName());
+                        System.out.println();
+                    }
                 }
             }
         }

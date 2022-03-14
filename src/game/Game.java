@@ -78,13 +78,37 @@ public class Game {
                     location = new ToolStore(player);
                     break;
                 case 3:
-                    location = new Cave(player);
+                    // Check player cleaned the location or not.
+                    if(!player.getInventory().isFood()) {
+                        location = new Cave(player);
+                    }
+                    else {
+                        System.out.println("You have already cleaned the Cave and get the award 'Food'.");
+                        System.out.println("You cannot enter Cave again, You return to the Safe House!");
+                        location = new SafeHouse(player);
+                    }
                     break;
                 case 4:
-                    location = new Forest(player);
+                    // Check player cleaned the location or not.
+                    if(!player.getInventory().isFirewood()) {
+                        location = new Forest(player);
+                    }
+                    else {
+                        System.out.println("You have already cleaned the Forest and get the award 'Firewood'.");
+                        System.out.println("You cannot enter Forest again, You return to the Safe House!");
+                        location = new SafeHouse(player);
+                    }
                     break;
                 case 5:
-                    location = new River(player);
+                    // Check player cleaned the location or not.
+                    if(!player.getInventory().isWater()) {
+                        location = new River(player);
+                    }
+                    else {
+                        System.out.println("You have already cleaned the River and get the award 'Water'.");
+                        System.out.println("You cannot enter River again, You return to the Safe House!");
+                        location = new SafeHouse(player);
+                    }
                     break;
                 case 6:
                     location = new Mine(player);

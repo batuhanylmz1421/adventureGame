@@ -4,9 +4,9 @@ import game.items.Armor;
 import game.items.Weapon;
 
 public class Inventory {
-    private boolean water;
     private boolean food;
     private boolean firewood;
+    private boolean water;
     private Weapon weapon;
     private Armor armor;
 
