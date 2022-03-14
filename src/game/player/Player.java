@@ -88,8 +88,14 @@ public class Player {
                         ",\n\t-Armor : " + this.getInventory().getArmor().getName() +
                         ", Block: " + this.getInventory().getArmor().getBlock() +
                         ",\n\t-Health: " + this.getHealth() +
-                        ",\n\t-Money : " + this.getMoney()
+                        ",\n\t-Money : " + this.getMoney() +
+                        ",\n\t-Awards:" +
+                        (this.getInventory().isFood() || this.getInventory().isWater() || this.getInventory().isFirewood() ? "" : " *Nothing* ") +
+                        (this.getInventory().isFood() ? " <Food> " : "") +
+                        (this.getInventory().isWater() ? " <Water> " : "") +
+                        (this.getInventory().isFirewood() ? " <Firewood> " : "")
         );
+        System.out.println((this.getInventory().isFood() && this.getInventory().isWater() && this.getInventory().isFirewood()) ? "*** You need to go to the Safe House to finish the game! ***" : "");
         System.out.println("---------------------");
     }
 

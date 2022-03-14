@@ -90,10 +90,9 @@ public class ToolStore extends NormalLoc {
                     System.out.println("Not enough money!\n");
                 } else {
                     // If player has already bought the same or greater weapon, than print notificaiton.
-                    if(this.getPlayer().getWeapon().getId() >= selectedWeapon.getId()) {
+                    if (this.getPlayer().getWeapon().getId() >= selectedWeapon.getId()) {
                         System.out.println("You have already greater or equal Weapon. Buying skipped!\n");
-                    }
-                    else {
+                    } else {
                         // Weapon buying section
                         System.out.println("-> You bought " + selectedWeapon.getName() + ".");
 
@@ -149,10 +148,9 @@ public class ToolStore extends NormalLoc {
                     System.out.println("Not enough money!");
                 } else {
                     // If player has already bought the same or greater armor, than print notificaiton
-                    if(this.getPlayer().getArmor().getId() >= selectedArmor.getId()) {
+                    if (this.getPlayer().getArmor().getId() >= selectedArmor.getId()) {
                         System.out.println("You have already greater or equal Armor. Buying skipped!");
-                    }
-                    else {
+                    } else {
                         // Armor buying section
                         System.out.println("You bought " + selectedArmor.getName() + ".");
 
