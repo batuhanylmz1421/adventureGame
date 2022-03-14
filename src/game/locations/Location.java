@@ -2,12 +2,17 @@ package game.locations;
 
 import game.player.Player;
 
+import java.util.Scanner;
+
 public abstract class Location {
     private Player player;
     private String name;
+    public static Scanner input = new Scanner(System.in);
 
-    void location() {
-        ;
+
+    public Location(Player player, String name) {
+        this.name = name;
+        this.player = player;
     }
 
     public abstract boolean onLocation();

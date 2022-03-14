@@ -1,13 +1,22 @@
 package game.player;
 
+import game.items.Armor;
+import game.items.Weapon;
+
 public class Inventory {
     private boolean water;
     private boolean food;
     private boolean firewood;
-    private String weaponName;
-    private String armorName;
-    private int weaponDamage;
-    private int armorDefence;
+    private Weapon weapon;
+    private Armor armor;
+
+    public Inventory() {
+        this.weapon = new Weapon(-1, "Fist", 0, 0);
+        this.armor = new Armor(-1, "Cloth", 0, 0);
+        this.food = false;
+        this.firewood = false;
+        this.water = false;
+    }
 
     public boolean isWater() {
         return water;
@@ -33,35 +42,19 @@ public class Inventory {
         this.firewood = firewood;
     }
 
-    public String getWeaponName() {
-        return weaponName;
+    public Weapon getWeapon() {
+        return weapon;
     }
 
-    public void setWeaponName(String weaponName) {
-        this.weaponName = weaponName;
+    public void setWeapon(Weapon weapon) {
+        this.weapon = weapon;
     }
 
-    public String getArmorName() {
-        return armorName;
+    public Armor getArmor() {
+        return armor;
     }
 
-    public void setArmorName(String armorName) {
-        this.armorName = armorName;
-    }
-
-    public int getWeaponDamage() {
-        return weaponDamage;
-    }
-
-    public void setWeaponDamage(int weaponDamage) {
-        this.weaponDamage = weaponDamage;
-    }
-
-    public int getArmorDefence() {
-        return armorDefence;
-    }
-
-    public void setArmorDefence(int armorDefence) {
-        this.armorDefence = armorDefence;
+    public void setArmor(Armor armor) {
+        this.armor = armor;
     }
 }
